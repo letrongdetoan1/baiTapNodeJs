@@ -1,4 +1,2 @@
-import data, { x, y, z } from './index.js';
-
-console.log(x);
-console.log(data)
+const data = require('./index');
+console.log(data);
