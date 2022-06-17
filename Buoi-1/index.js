@@ -1,10 +1,15 @@
-const path = require('path');
+const fs = require('fs');
 
-let link = path.join('c:/123/234/456/789/101112', '../../../app1.js')
-let link2 = '../ok'
+fs.readFile('./1.pdf', 'utf-8', function (err, data) {
+    if (err) {
+        console.log(err)
+    } else {
+        fs.writeFile('./hello1.txt', data, 'base64url', function () {
+            console.log('Da xong')
+        })
 
-let check =  path.isAbsolute(link);
-let check2 =  path.isAbsolute(link2);
+    }
+})
 
-
-console.log(link)
+const test2 = fs.readFileSync('./test2.txt', 'utf-8');
+fs.writeFileSync('viet2.txt', test2, 'utf-8');
